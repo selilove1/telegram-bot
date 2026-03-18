@@ -154,11 +154,14 @@ https://t.me/+xrMXzNKdNzMzYTc1
 # 🔥 FAKE PURCHASE
 async def fake_notifications(app):
 
-    names = ["Rahul", "Aman", "Rohit", "Vikas", "Neha"]
+    names = ["Rahul", "Aman", "Rohit", "Vikas", "Manish", "Sundar", "Karan", "Aakib", "Lokesh", "Abhishek", "Prashant", "Gojo Satr", "Shubham", "Dinesh", "Pankaj121", "Deepak", "Arjun", "Yash", "tarun", "Vivek"]
 
     while True:
 
-        name = random.choice(names)
+        if recent_buyers and random.random() > 0.5:
+            name = recent_buyers.pop(0)   # REAL USER 🔥
+        else:
+            name = random.choice(names)  # FAKE USER
 
         try:
             await app.bot.send_message(
