@@ -158,18 +158,20 @@ async def fake_notifications(app):
 
     while True:
 
-        if recent_buyers and random.random() > 0.5:
-            name = recent_buyers.pop(0)   # REAL USER 🔥
-        else:
-            name = random.choice(names)  # FAKE USER
-
         try:
+            # REAL + FAKE mix
+            if recent_buyers:
+                name = recent_buyers.pop(0)   # REAL USER 🔥
+            else:
+                name = random.choice(names)   # FAKE USER
+
             await app.bot.send_message(
                 chat_id=GROUP_ID,
-                text=f"⚡ {name} just purchased Premium Pack"
+                text=f"💸 {name} just purchased Premium!"
             )
-        except:
-            pass
+
+        except Exception as e:
+            print("ERROR:", e)
 
         await asyncio.sleep(120)
 
