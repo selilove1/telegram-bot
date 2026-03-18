@@ -14,7 +14,7 @@ from telegram.ext import (
 TOKEN = "8611185133:AAGrVi6sRaTpGYk47qGO_Ghzf-8hxIrbi_k"
 ADMIN_ID = 7865928520
 GROUP_ID = -1003750352591
-
+recent_buyers = []
 QR_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183553850615205462_y.jpg"
 MAIN_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_4999516532014517231_y.jpg"
 
