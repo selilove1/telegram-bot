@@ -123,34 +123,25 @@ async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     data = query.data
 
+    print("BUTTON CLICKED:", data)   # 👈 DEBUG
+
     if data.startswith("approve_"):
 
         user_id = int(data.replace("approve_", ""))
 
+        print("SENDING TO USER:", user_id)  # 👈 DEBUG
+
         try:
             await context.bot.send_message(
                 chat_id=user_id,
-                text=f"""
-🎉 Payment Approved Successfully!
-
-🔓 Your Access is Ready
-
-👉 Join Private Group:
-https://t.me/+xrMXzNKdNzMzYTc1
-
-📌 Important Instructions:
-* Daily new videos update होंगे
-* Link किसी को share मत करना
-* Lifetime access है
-
-🚀 Enjoy your content
-"""
+                text="✅ TEST: Payment Approved"
             )
 
-            await query.message.reply_text("✅ Approved & Message Sent")
+            await query.message.reply_text("✅ SENT SUCCESS")
 
         except Exception as e:
-            await query.message.reply_text(f"❌ Error: {e}")
+            print("ERROR:", e)
+            await query.message.reply_text(f"❌ ERROR: {e}")
 
 # 🔥 FAKE PURCHASE
 async def fake_notifications(app):
