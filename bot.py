@@ -154,7 +154,7 @@ https://t.me/+xrMXzNKdNzMzYTc1
 # 🔥 FAKE PURCHASE
 async def fake_notifications(app):
 
-    names = ["Rahul", "Aman", "Rohit", "Vikas", "Manish", "Sundar", "Karan", "Aakib", "Lokesh", "Abhishek", "Prashant", "Gojo Satr", "Shubham", "Dinesh", "Pankaj121", "Deepak", "Arjun", "Yash", "tarun", "Vivek"]
+    names = ["Rohit", "Vikas", "Manish", "Sundar", "Karan", "Aakib"]
 
     while True:
 
