@@ -11,7 +11,7 @@ from telegram.ext import (
 )
 
 # 🔧 CONFIG
-TOKEN = "PASTE_YOUR_BOT_TOKEN"
+TOKEN = "8768501425:AAFXnxjSqfhTcR6Qf23SlKMc7zaQoBIcSrE"
 ADMIN_ID = 123456789
 GROUP_ID = -1001234567890
 
@@ -23,7 +23,7 @@ PRIVATE_GROUP = "https://t.me/your_private_group"
 
 # 🔥 START
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
+    await update.message.reply_text(str(update.effective_chat.id))
     keyboard = [
         [InlineKeyboardButton("🇮🇳 Hindi", callback_data="hi")],
         [InlineKeyboardButton("🇬🇧 English", callback_data="en")]
