@@ -18,8 +18,8 @@ recent_buyers = []
 QR_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183553850615205462_y.jpg"
 MAIN_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183958372109979356_y.jpg"
 
-DEMO_LINK = "https://t.me/+lzE8DGNT9QA3Yjc1"
-PROOF_LINK = "https://t.me/+XTPK4eFNZ6Q1YjE9"
+DEMO_LINK = "https://t.me/itsmy8246"
+PROOF_LINK = "https://t.me/proofs8246"
 PRIVATE_GROUP = "https://t.me/your_private_group"
 
 
