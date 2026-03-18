@@ -176,24 +176,6 @@ async def fake_notifications(app):
         await asyncio.sleep(120)
 
 
-# 🔥 LIVE COUNTER
-async def live_counter(app):
-
-    while True:
-
-        count = random.randint(120, 350)
-
-        try:
-            await app.bot.send_message(
-                chat_id=GROUP_ID,
-                text=f"🔥 {count}+ users are viewing right now!"
-            )
-        except:
-            pass
-
-        await asyncio.sleep(90)
-
-
 # 🔥 START TASKS
 async def on_start(app):
     print("Bot Running...")
