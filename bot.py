@@ -99,6 +99,10 @@ Please Send Exact Amount
 async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     user = update.message.from_user
+    name = user.first_name
+recent_buyers.append(name)
+
+print("ADDED BUYER:", name)
 
     await update.message.reply_text("⏳ Waiting for admin approval")
 
