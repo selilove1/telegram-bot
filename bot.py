@@ -15,7 +15,9 @@ TOKEN = "8611185133:AAGrVi6sRaTpGYk47qGO_Ghzf-8hxIrbi_k"
 ADMIN_ID = 123456789
 GROUP_ID = -1001234567890
 
-QR_IMAGE = "https://your-qr-image-link.com/qr.png"
+QR_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183553850615205462_y.jpg"
+MAIN_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_4999516532014517231_y.jpg"
+
 DEMO_LINK = "https://t.me/your_demo_channel"
 PROOF_LINK = "https://t.me/your_proof_channel"
 PRIVATE_GROUP = "https://t.me/your_private_group"
@@ -23,7 +25,7 @@ PRIVATE_GROUP = "https://t.me/your_private_group"
 
 # 🔥 START
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(str(update.effective_chat.id))
+
     keyboard = [
         [InlineKeyboardButton("🇮🇳 Hindi", callback_data="hi")],
         [InlineKeyboardButton("🇬🇧 English", callback_data="en")]
@@ -40,9 +42,11 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
     await query.answer()
+
     data = query.data
 
-    if data in ["hi", "en"]:
+    # LANGUAGE SELECT
+    if data == "hi" or data == "en":
 
         keyboard = [
             [InlineKeyboardButton("💎 Premium खरीदें", callback_data="buy")],
@@ -51,11 +55,20 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
         ]
 
         await query.message.reply_photo(
-            photo=QR_IMAGE,
-            caption="🔥 Premium Videos Available\n👇 Choose Option",
+            photo=MAIN_IMAGE,
+            caption="""
+🔥 PREMIUM VIDEO PACK
+
+✔ 50K+ Videos
+✔ Instant Access
+✔ Lifetime Content
+
+👇 नीचे से option select करें
+""",
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
+    # BUY
     elif data == "buy":
 
         keyboard = [
@@ -64,13 +77,23 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await query.message.reply_photo(
             photo=QR_IMAGE,
-            caption="💳 Pay ₹49\nAfter payment click I PAID",
+            caption="""
+💳 PAYMENT DETAILS
+
+Amount: ₹49  
+Videos: 50K+
+
+Please Send Exact Amount
+""",
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
 
+    # PAID
     elif data == "paid":
 
-        await query.message.reply_text("📸 Send your payment screenshot now")
+        await query.message.reply_text(
+            "📸 Payment screenshot भेजो verification के लिए"
+        )
 
 
 # 🔥 SCREENSHOT HANDLER
@@ -92,7 +115,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
 
 
-# 🔥 ADMIN APPROVE BUTTON
+# 🔥 ADMIN APPROVE
 async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
@@ -109,13 +132,13 @@ async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text=f"🎉 Payment Approved!\n\n👉 Join here:\n{PRIVATE_GROUP}"
         )
 
-        await query.message.reply_text("✅ Approved Successfully")
+        await query.message.reply_text("✅ Approved")
 
 
-# 🔥 FAKE PURCHASE NOTIFICATIONS
+# 🔥 FAKE PURCHASE
 async def fake_notifications(app):
 
-    names = ["Rahul", "Aman", "Rohit", "Vikas", "Suresh", "Neha", "Pooja"]
+    names = ["Rahul", "Aman", "Rohit", "Vikas", "Neha"]
 
     while True:
 
@@ -132,7 +155,7 @@ async def fake_notifications(app):
         await asyncio.sleep(120)
 
 
-# 🔥 LIVE COUNTER (NEW ADD)
+# 🔥 LIVE COUNTER
 async def live_counter(app):
 
     while True:
@@ -150,11 +173,11 @@ async def live_counter(app):
         await asyncio.sleep(90)
 
 
-# 🔥 ON START
+# 🔥 START TASKS
 async def on_start(app):
     print("Bot Running...")
     asyncio.create_task(fake_notifications(app))
-    asyncio.create_task(live_counter(app))  # 👈 added
+    asyncio.create_task(live_counter(app))
 
 
 # 🔥 MAIN
@@ -166,8 +189,6 @@ def main():
     app.add_handler(CallbackQueryHandler(button))
     app.add_handler(CallbackQueryHandler(admin_buttons, pattern="approve_"))
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
-
-    print("Bot Running...")
 
     app.run_polling()
 
