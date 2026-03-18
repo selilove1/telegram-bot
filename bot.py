@@ -16,10 +16,10 @@ ADMIN_ID = 7865928520
 GROUP_ID = -1003750352591
 recent_buyers = []
 QR_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183553850615205462_y.jpg"
-MAIN_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_4999516532014517231_y.jpg"
+MAIN_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183958372109979356_y.jpg"
 
-DEMO_LINK = "https://t.me/your_demo_channel"
-PROOF_LINK = "https://t.me/your_proof_channel"
+DEMO_LINK = "https://t.me/+lzE8DGNT9QA3Yjc1"
+PROOF_LINK = "https://t.me/+XTPK4eFNZ6Q1YjE9"
 PRIVATE_GROUP = "https://t.me/your_private_group"
 
 
