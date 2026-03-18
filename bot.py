@@ -193,10 +193,19 @@ def main():
 
     app = ApplicationBuilder().token(TOKEN).post_init(on_start).build()
 
+    # START
     app.add_handler(CommandHandler("start", start))
+
+    # ✅ ADMIN APPROVE (पहले होना चाहिए)
     app.add_handler(CallbackQueryHandler(admin_buttons, pattern="^approve_"))
-app.add_handler(CallbackQueryHandler(button))
+
+    # ✅ NORMAL BUTTONS
+    app.add_handler(CallbackQueryHandler(button))
+
+    # 📸 SCREENSHOT HANDLER
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
+
+    print("Bot Running...")
 
     app.run_polling()
 
