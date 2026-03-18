@@ -143,31 +143,14 @@ https://t.me/+xrMXzNKdNzMzYTc1
 * Link किसी को share मत करना
 * Lifetime access है
 
-Enjoy your content 🚀
+🚀 Enjoy your content
 """
             )
 
-            await query.message.reply_text("✅ Approved & Access Sent")
+            await query.message.reply_text("✅ Approved & Message Sent")
 
         except Exception as e:
             await query.message.reply_text(f"❌ Error: {e}")
-
-    query = update.callback_query
-    await query.answer()
-
-    data = query.data
-
-    if data.startswith("approve_"):
-
-        user_id = int(data.split("_")[1])
-
-        await context.bot.send_message(
-            chat_id=user_id,
-            text=f"🎉 Payment Approved!\n\n👉 Join here:\n{PRIVATE_GROUP}"
-        )
-
-        await query.message.reply_text("✅ Approved")
-
 
 # 🔥 FAKE PURCHASE
 async def fake_notifications(app):
