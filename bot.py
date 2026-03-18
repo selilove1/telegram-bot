@@ -24,8 +24,8 @@ PRIVATE_GROUP = "https://t.me/your_private_group"
 
 
 # 🔥 START
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-
+async def start(update, context):
+    await update.message.reply_text(str(update.effective_chat.id))
     keyboard = [
         [InlineKeyboardButton("🇮🇳 Hindi", callback_data="hi")],
         [InlineKeyboardButton("🇬🇧 English", callback_data="en")]
