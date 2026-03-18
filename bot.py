@@ -194,8 +194,8 @@ def main():
     app = ApplicationBuilder().token(TOKEN).post_init(on_start).build()
 
     app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(button))
-    app.add_handler(CallbackQueryHandler(admin_buttons, pattern="approve_"))
+    app.add_handler(CallbackQueryHandler(admin_buttons, pattern="^approve_"))
+app.add_handler(CallbackQueryHandler(button))
     app.add_handler(MessageHandler(filters.PHOTO, handle_photo))
 
     app.run_polling()
