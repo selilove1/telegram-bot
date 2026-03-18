@@ -125,6 +125,40 @@ async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if data.startswith("approve_"):
 
+        user_id = int(data.replace("approve_", ""))
+
+        try:
+            await context.bot.send_message(
+                chat_id=user_id,
+                text=f"""
+🎉 Payment Approved Successfully!
+
+🔓 Your Access is Ready
+
+👉 Join Private Group:
+https://t.me/+xrMXzNKdNzMzYTc1
+
+📌 Important Instructions:
+* Daily new videos update होंगे
+* Link किसी को share मत करना
+* Lifetime access है
+
+Enjoy your content 🚀
+"""
+            )
+
+            await query.message.reply_text("✅ Approved & Access Sent")
+
+        except Exception as e:
+            await query.message.reply_text(f"❌ Error: {e}")
+
+    query = update.callback_query
+    await query.answer()
+
+    data = query.data
+
+    if data.startswith("approve_"):
+
         user_id = int(data.split("_")[1])
 
         await context.bot.send_message(
