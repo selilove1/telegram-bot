@@ -12,7 +12,7 @@ from telegram.ext import (
 
 # 🔧 CONFIG
 TOKEN = "8611185133:AAGrVi6sRaTpGYk47qGO_Ghzf-8hxIrbi_k"
-ADMIN_ID = 123456789
+ADMIN_ID = 7865928520
 GROUP_ID = -1001234567890
 
 QR_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183553850615205462_y.jpg"
