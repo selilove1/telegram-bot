@@ -134,15 +134,14 @@ async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 🔓 Your Access is Ready
 
-👉 Join Private Group:
+👉🥵 Join Premium Group:
 https://t.me/+oI71u6UT42wyZTY8
 
 📌 Important Instructions:
-* Daily new videos update होंगे
 * Link किसी को share मत करना
-* Lifetime access है
 
-🚀 Enjoy your content
+
+🥵💦 Enjoy your content
 """
             )
 
