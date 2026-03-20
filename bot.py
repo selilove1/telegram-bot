@@ -13,7 +13,7 @@ from telegram.ext import (
 # 🔧 CONFIG
 TOKEN = "8611185133:AAGrVi6sRaTpGYk47qGO_Ghzf-8hxIrbi_k"
 ADMIN_ID = 7865928520
-GROUP_ID = -1003750352591
+GROUP_ID = -1005412547213
 recent_buyers = []
 QR_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183553850615205462_y.jpg"
 MAIN_IMAGE = "https://ik.imagekit.io/q3emnf9bso/photo_6183958372109979356_y.jpg"
@@ -135,7 +135,7 @@ async def admin_buttons(update: Update, context: ContextTypes.DEFAULT_TYPE):
 🔓 Your Access is Ready
 
 👉 Join Private Group:
-https://t.me/+xrMXzNKdNzMzYTc1
+https://t.me/+oI71u6UT42wyZTY8
 
 📌 Important Instructions:
 * Daily new videos update होंगे
